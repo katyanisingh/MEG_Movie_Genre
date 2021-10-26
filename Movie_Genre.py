@@ -15,14 +15,14 @@ if args.mode:
 else:
     mode="baseline"
 #loading the required datafiles and creating dataframes
-Dt_Order_Movie = scipy.io.loadmat('E:/Desktop/FALL 2021/CMPUT 652/Dt_Order_Movie.mat')
+Dt_Order_Movie = scipy.io.loadmat('./Dt_Order_Movie.mat')
 Dt_Order_Movie = {k:v for k, v in Dt_Order_Movie.items() if k[0] != '_'}
 Df_Order_Movie = pd.DataFrame({k: pd.Series(v[0]) for k, v in Dt_Order_Movie.items()})
-Video_Genres = scipy.io.loadmat('E:/Desktop/FALL 2021/CMPUT 652/Video_Genres_mat.mat')
+Video_Genres = scipy.io.loadmat('./Video_Genres_mat.mat')
 
 #loading the DCT features 
 if(mode =="baseline"):
-    Dt_GrnCls_GRDFt = scipy.io.loadmat('E:/Desktop/FALL 2021/CMPUT 652/Dt_GrnCls_GRDFt.mat')
+    Dt_GrnCls_GRDFt = scipy.io.loadmat('./Dt_GrnCls_GRDFt.mat')
     Df_GrnCls_GRDFt = Dt_GrnCls_GRDFt['DCTFt']
     [subjectNum,clipNum,featureNum] = Df_GrnCls_GRDFt.shape[0],Df_GrnCls_GRDFt.shape[1],Df_GrnCls_GRDFt.shape[2]
 
